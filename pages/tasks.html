@@ -1,8 +1,36 @@
 <div class="container">
-  <h2>Tasks</h2> 
-  <table class="table table-hover">
+  <a data-toggle="modal" data-target="#createTask" class="btn btn-success">Create a Task</a>
+  <!-- Modal -->
+  <div class="modal fade" id="createTask" role="dialog" ng-controller="createTaskController">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create your own Task</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label>Summary</label>
+              <input type="text" class="form-control" id="formSummary" placeholder="Really awesome task name here" ng-model="formSummary">
+            </div>
+            <div class="form-group">
+              <label>Status</label>
+              <input type="text" class="form-control" id="formStatus" placeholder="Really awesome task description here" ng-model="formStatus">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary success" data-dismiss="modal" ng-click="submitTask()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table class="tasks-table table table-hover">
     <thead>
-      <tr>
+      <tr class="success">
         <th>ID</th>
         <th>Summary</th>
         <th>Status</th>
@@ -11,7 +39,7 @@
     <tbody>
       <tr ng-repeat="task in tasks">
         <td>{{task._id}}</td>
-        <td>{{task.summary}</td>
+        <td>{{task.summary}}</td>
         <td>{{task.status}}</td>
       </tr>
     </tbody>

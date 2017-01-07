@@ -1,1 +1,46 @@
-<div> assignees </div>
+<div class="container">
+  <a data-toggle="modal" data-target="#createAssignee" class="btn btn-success">Create an Assignee</a>
+  <!-- Modal -->
+  <div class="modal fade" id="createAssignee" role="dialog" ng-controller="createAssigneeController">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create an Assignee</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label>Assignee Name</label>
+              <input type="text" class="form-control" id="formAssigneeName" placeholder="Really awesome name here" ng-model="formAssigneeName">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary success" data-dismiss="modal" ng-click="submitAssignee()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table class="assignees-table table table-hover">
+    <thead>
+      <tr class="success">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Jobs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="assignee in assignees">
+        <td>{{assignee._id}}</td>
+        <td>{{assignee.name}}</td>
+        <td>
+            <span ng-repeat="job in assignee.jobs"> {{job}}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

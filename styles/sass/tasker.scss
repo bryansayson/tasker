@@ -5,4 +5,19 @@ body {
       font-size: 12rem;
     }
   }
+  .container {
+    .tasks-table {
+      margin-top: 20px;
+    }
+    .assignees-table {
+      margin-top: 20px;
+      tbody {
+        td {
+          span {
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }
