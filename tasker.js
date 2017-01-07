@@ -27,11 +27,14 @@ tasker.controller('createTaskController', function($scope, $http) {
 })
 
 tasker.controller('assigneeController', function($scope, $http) {
-  $http.get("http://interview.lenderprice.com:7070/api/assignee")
-  .then(function(response) {
-      $scope.assignees = response.data;
-      console.log(response.data);
-  });
+  $scope.grabAssignees = function() {
+    $http.get("http://interview.lenderprice.com:7070/api/assignee")
+      .then(function(response) {
+        $scope.assignees = response.data;
+        console.log(response.data);
+      });
+    }
+    $scope.grabAssignees();
 });
 
 tasker.controller('createAssigneeController', function($scope, $http) {
@@ -48,6 +51,11 @@ tasker.controller('createAssigneeController', function($scope, $http) {
   }
 })
 
+tasker.controller('assignTaskController', function($scope, $http) {
+  $scope.grabTasks();
+  $scope.grabAssignees();
+});
+
 tasker.config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/tasks', {
@@ -57,6 +65,10 @@ tasker.config(function($routeProvider, $locationProvider) {
     .when('/assignees', {
       templateUrl : 'pages/assignees.html',
       controller  : 'assigneeController'
+    });
+    .when('/assigntask', {
+      templateUrl : 'pages/assigntask.html',
+      controller  : 'assigntaskController'
     });
     $locationProvider.html5Mode(true);
 });

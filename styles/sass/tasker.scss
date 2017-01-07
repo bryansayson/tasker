@@ -1,8 +1,26 @@
+$thisblue: #5bc0de;
+$thisred: #ee5f5b;
+
 body {
   .header {
     div {
       text-align: center;
       font-size: 12rem;
+      background: slateblue;
+    }
+    .counter-container {
+      margin: 0 auto;
+      .counter {
+        .description {
+          font-size: 6rem;
+          .task-word {
+            color: $thisblue;
+          }
+          .assignees-word {
+            color: $thisred;
+          }
+        }
+      }
     }
   }
   .container {

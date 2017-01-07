@@ -5,13 +5,26 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css">
   <link rel="stylesheet" href="./styles/css/tasker.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <base href="/">
 </head>
 
 <body ng-app="Tasker">
 
   <div class="header row">
-    <div class="col-12"> Tasker </div>
+    <div class="col-12"> 
+      Tasker <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+    </div>
+    <div class="counter-container"> 
+      <div class="counter">
+        <span id="taskCounter"> </span> 
+        <span class="description"> <span class="task-word"> tasks </span> need to be done.</span>
+       </div>
+       <div class="counter">
+        <span id="assigneeCounter"> </span> 
+        <span class="description"> lazy <span class="assignees-word"> assignees </span> don't want to do it.</span>
+       </div>
+    </div>
   </div>
 
 <nav class="navbar navbar-default">
@@ -19,6 +32,7 @@
       <ul class="nav navbar-nav">
         <li><a href="tasks"> View Tasks </a></li>
         <li><a href="assignees"> View Assignees </a></li>
+        <li><a href="assigntask"> Assign a Task </a></li>
       </ul>
     </div>
 </nav>
@@ -35,6 +49,7 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="tasker.js"> </script>
-
+  <script src="/node_modules/countup.js/countUp.js"> </script>
+  <script src="counter.js"> </script>
 </body>
 </html>

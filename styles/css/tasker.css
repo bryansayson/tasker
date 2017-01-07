@@ -2,6 +2,15 @@ body .header div {
   text-align: center;
   font-size: 12rem; }
 
+body .header .counter-container {
+  margin: 0 auto; }
+  body .header .counter-container .counter .description {
+    font-size: 6rem; }
+    body .header .counter-container .counter .description .task-word {
+      color: #5bc0de; }
+    body .header .counter-container .counter .description .assignees-word {
+      color: #ee5f5b; }
+
 body .container .tasks-table {
   margin-top: 20px; }
 
