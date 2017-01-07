@@ -1,0 +1,32 @@
+{
+  "name": "tasker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tasker.js",
+  "dependencies": {
+    "commonjs": "^0.0.1",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-sass": "^3.0.0",
+    "jquery": "^3.1.1",
+    "jshint": "^2.9.4",
+    "node": "^0.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysayson/tasker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brysayson/tasker/issues"
+  },
+  "homepage": "https://github.com/brysayson/tasker#readme"
+}
