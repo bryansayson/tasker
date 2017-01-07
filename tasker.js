@@ -51,10 +51,6 @@ tasker.controller('createAssigneeController', function($scope, $http) {
   }
 })
 
-tasker.controller('assignTaskController', function($scope, $http) {
-  $scope.grabTasks();
-  $scope.grabAssignees();
-});
 
 tasker.config(function($routeProvider, $locationProvider) {
   $routeProvider
@@ -65,10 +61,6 @@ tasker.config(function($routeProvider, $locationProvider) {
     .when('/assignees', {
       templateUrl : 'pages/assignees.html',
       controller  : 'assigneeController'
-    });
-    .when('/assigntask', {
-      templateUrl : 'pages/assigntask.html',
-      controller  : 'assigntaskController'
     });
     $locationProvider.html5Mode(true);
 });
