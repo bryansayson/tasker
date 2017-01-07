@@ -1,7 +1,8 @@
 <div class="container">
-  <a data-toggle="modal" data-target="#createAssignee" class="btn btn-danger">Create an Assignee</a>
+
+  <a data-toggle="modal" data-target="#createAssignee" class="btn btn-danger menu-button"><i class="fa fa-plus" aria-hidden="true"></i> Create an Assignee</a>
   <!-- Modal -->
-  <div class="modal fade" id="createAssignee" role="dialog" ng-controller="createAssigneeController">
+  <div class="modal fade" id="createAssignee" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
@@ -24,6 +25,39 @@
       </div>
     </div>
   </div>
+
+  <a data-toggle="modal" data-target="#assignTask" class="btn btn-danger menu-button"> <i class="fa fa-user" aria-hidden="true"></i> Assign a Task</a>
+  <!-- Modal -->
+  <div class="modal fade" id="assignTask" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Assign a Task</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="formAssigneeName">Assignee Name</label>
+              <select class="form-control" ng-model="formAssigneeName">
+                <option ng-repeat="assignee in assignees" data={{assignee._id}}>{{assignee.name}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="formTaskId">Task ID</label>
+              <select class="form-control" ng-model="formTaskId">
+                <option ng-repeat="task in tasks">{{task._id}}</option>
+              </select>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="assignTasks()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <table class="assignees-table table table-hover">
     <thead>
       <tr class="danger">

@@ -3,10 +3,13 @@ $thisred: #ee5f5b;
 
 body {
   .header {
+     margin-bottom: 40px;
+    .tasker {
+      background: slateblue;
+    }
     div {
       text-align: center;
       font-size: 12rem;
-      background: slateblue;
     }
     .counter-container {
       margin: 0 auto;
@@ -24,6 +27,27 @@ body {
     }
   }
   .container {
+    .menu-button {
+      font-size: 3rem;
+      padding: 20px;
+    }
+    table {
+      thead {
+        tr {
+          th {
+            text-align: center;
+            font-size: 4rem;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            text-align: center;
+          }
+        }
+      }
+    }
     .tasks-table {
       margin-top: 20px;
     }
@@ -37,5 +61,8 @@ body {
         }
       }
     }
+  }
+  #datepicker, #datepicker2 {
+    display: block;
   }
 }

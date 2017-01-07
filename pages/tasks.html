@@ -1,7 +1,8 @@
 <div class="container">
-  <a data-toggle="modal" data-target="#createTask" class="btn btn-info">Create a Task</a>
+
+  <a data-toggle="modal" data-target="#createTask" class="btn btn-info menu-button"> <i class="fa fa-plus" aria-hidden="true"></i> Create a Task</a>
   <!-- Modal -->
-  <div class="modal fade" id="createTask" role="dialog" ng-controller="createTaskController">
+  <div class="modal fade" id="createTask" role="dialog" ng-controller="taskController">
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
@@ -10,7 +11,7 @@
           <h4 class="modal-title">Create your own Task</h4>
         </div>
         <div class="modal-body">
-          <form>
+          <form name="createTaskForm">
             <div class="form-group">
               <label>Summary</label>
               <input type="text" class="form-control" id="formSummary" placeholder="Really awesome task name here" ng-model="formSummary">
@@ -28,6 +29,57 @@
       </div>
     </div>
   </div>
+  <!-- Modal -->
+
+  <a data-toggle="modal" data-target="#updateTask" class="btn btn-info menu-button"> <i class="fa fa-pencil" aria-hidden="true"></i> Update a Task</a>
+  <!-- Modal -->
+  <div class="modal fade" id="updateTask" role="dialog" ng-controller="taskController">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Update a Task</h4>
+        </div>
+        <div class="modal-body">
+          <form name="updateTaskForm">
+            <div class="form-group">
+              <label for="formTaskId">Task ID</label>
+              <select class="form-control" ng-model="formTaskId">
+                <option ng-repeat="task in tasks">{{task._id}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="formSummary">Summary</label>
+              <input class="form-control" id="formSummary" placeholder="Summary" ng-model="formSummary">
+            </div>
+            <div class="form-group">
+              <label for="formDescription">Description</label>
+              <input class="form-control" id="formDescription" placeholder="Put an awesome description so someone will do it." ng-model="formDescription">
+            </div>
+            <div class="form-group">
+              <label for="formStatus">Status</label>
+              <input class="form-control" id="formStatus" placeholder="put an array of statuses here." ng-model="formStatus">
+            </div>
+            <div class="form-group">
+              <label for="formStartDate">Start Date</label>
+              <input type="text" id="datepicker" ng-model="formStartDate">
+            </div>
+            <div class="form-group">
+              <label for="formEndDate">End Date</label>
+              <input type="text" id="datepicker2" ng-model="formEndDate">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-info" data-dismiss="modal" ng-click="updateTask()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+
   <table class="tasks-table table table-hover">
     <thead>
       <tr class="info">
@@ -45,3 +97,12 @@
     </tbody>
   </table>
 </div>
+
+<script>
+
+  $( function() {
+    $( "#datepicker" ).datepicker();
+    $( "#datepicker2" ).datepicker();
+  } );
+
+</script>

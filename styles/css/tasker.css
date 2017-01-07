@@ -1,15 +1,29 @@
-body .header div {
-  text-align: center;
-  font-size: 12rem; }
+body .header {
+  margin-bottom: 40px; }
+  body .header .tasker {
+    background: slateblue; }
+  body .header div {
+    text-align: center;
+    font-size: 12rem; }
+  body .header .counter-container {
+    margin: 0 auto; }
+    body .header .counter-container .counter .description {
+      font-size: 6rem; }
+      body .header .counter-container .counter .description .task-word {
+        color: #5bc0de; }
+      body .header .counter-container .counter .description .assignees-word {
+        color: #ee5f5b; }
 
-body .header .counter-container {
-  margin: 0 auto; }
-  body .header .counter-container .counter .description {
-    font-size: 6rem; }
-    body .header .counter-container .counter .description .task-word {
-      color: #5bc0de; }
-    body .header .counter-container .counter .description .assignees-word {
-      color: #ee5f5b; }
+body .container .menu-button {
+  font-size: 3rem;
+  padding: 20px; }
+
+body .container table thead tr th {
+  text-align: center;
+  font-size: 4rem; }
+
+body .container table tbody tr td {
+  text-align: center; }
 
 body .container .tasks-table {
   margin-top: 20px; }
@@ -18,3 +32,6 @@ body .container .assignees-table {
   margin-top: 20px; }
   body .container .assignees-table tbody td span {
     display: block; }
+
+body #datepicker, body #datepicker2 {
+  display: block; }
