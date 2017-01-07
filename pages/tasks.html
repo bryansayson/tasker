@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Tasks</h2> 
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Summary</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="task in tasks">
+        <td>{{task._id}}</td>
+        <td>{{task.summary}</td>
+        <td>{{task.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
