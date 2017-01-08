@@ -5,8 +5,18 @@ $thisgrey: #272b30;
 body {
   .header {
      margin-bottom: 40px;
+      .could-do-it {
+        font-size: 6rem;
+      }
     .tasker {
       background: slateblue;
+      .wont-do-it {
+        display: block;
+        font-size: 4rem;
+        .tasker-name-container {
+          color: $thisred;
+        }
+      }
     }
     div {
       text-align: center;
@@ -28,6 +38,9 @@ body {
     }
   }
   .container {
+      .menu-button:first-child {
+        margin-right: 25px;
+      }
     .menu-button {
       font-size: 3rem;
       padding: 20px;
@@ -63,9 +76,9 @@ body {
       }
     }
     .search-container {
-      width: 400px;
-      display: inline-block;
+      display: block;
       float: right;
+      margin-top: 15px;
       input, input:focus {
         border:none;
         background: $thisgrey
@@ -76,7 +89,7 @@ body {
         margin:3px;
         height: 84px;
         color: white;
-        font-size: 2rem;
+        font-size: 4rem;
       }
       .input-group-addon {
         background: $thisgrey;
@@ -92,5 +105,11 @@ body {
   }
   #datepicker, #datepicker2 {
     display: block;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  .search-container {
+    width: 100%;
   }
 }

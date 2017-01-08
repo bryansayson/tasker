@@ -1,7 +1,14 @@
 body .header {
   margin-bottom: 40px; }
+  body .header .could-do-it {
+    font-size: 6rem; }
   body .header .tasker {
     background: slateblue; }
+    body .header .tasker .wont-do-it {
+      display: block;
+      font-size: 4rem; }
+      body .header .tasker .wont-do-it .tasker-name-container {
+        color: #ee5f5b; }
   body .header div {
     text-align: center;
     font-size: 12rem; }
@@ -13,6 +20,9 @@ body .header {
         color: #5bc0de; }
       body .header .counter-container .counter .description .assignees-word {
         color: #ee5f5b; }
+
+body .container .menu-button:first-child {
+  margin-right: 25px; }
 
 body .container .menu-button {
   font-size: 3rem;
@@ -34,9 +44,9 @@ body .container .assignees-table {
     display: block; }
 
 body .container .search-container {
-  width: 400px;
-  display: inline-block;
-  float: right; }
+  display: block;
+  float: right;
+  margin-top: 15px; }
   body .container .search-container input, body .container .search-container input:focus {
     border: none;
     background: #272b30; }
@@ -46,7 +56,7 @@ body .container .search-container {
     margin: 3px;
     height: 84px;
     color: white;
-    font-size: 2rem; }
+    font-size: 4rem; }
   body .container .search-container .input-group-addon {
     background: #272b30;
     border: none; }
@@ -59,3 +69,7 @@ body .container .search-container {
 
 body #datepicker, body #datepicker2 {
   display: block; }
+
+@media only screen and (max-width: 768px) {
+  .search-container {
+    width: 100%; } }

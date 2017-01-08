@@ -1,6 +1,17 @@
 <div class="container">
 
+<div class="tasks-actions-container">
   <a data-toggle="modal" data-target="#createTask" class="btn btn-info menu-button"> <i class="fa fa-plus" aria-hidden="true"></i> Create a Task</a>
+  <a data-toggle="modal" data-target="#updateTask" class="btn btn-info menu-button"> <i class="fa fa-pencil" aria-hidden="true"></i> Update a Task</a>
+</div>
+
+ <div class="form-group search-container">
+  <div class="input-group">
+    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+    <input type="text" class="form-control" ng-model="searchTasks">
+  </div>      
+</div>
+
   <!-- Modal -->
   <div class="modal fade" id="createTask" role="dialog" ng-controller="taskController">
     <div class="modal-dialog">
@@ -31,7 +42,6 @@
   </div>
   <!-- Modal -->
 
-  <a data-toggle="modal" data-target="#updateTask" class="btn btn-info menu-button"> <i class="fa fa-pencil" aria-hidden="true"></i> Update a Task</a>
   <!-- Modal -->
   <div class="modal fade" id="updateTask" role="dialog" ng-controller="taskController">
     <div class="modal-dialog">
@@ -79,13 +89,6 @@
     </div>
   </div>
   <!-- Modal -->
-
-   <div class="form-group search-container">
-      <div class="input-group">
-        <div class="input-group-addon"><i class="fa fa-search"></i></div>
-        <input type="text" class="form-control" ng-model="searchTasks">
-      </div>      
-    </div>
 
   <table class="tasks-table table table-hover">
     <thead>

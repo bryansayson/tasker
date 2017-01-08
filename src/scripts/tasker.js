@@ -5,13 +5,12 @@ app.service('requestProcessor', function($http) {
   //function that processes HTTP requests given a URL method and data
   this.processor = function(url, method, data) {
     console.log("processing....");
+    var baseUrl = "http://interview.lenderprice.com:7070/api/";
     var req = {};
     var returnResponse;
-    req.url = url;
+    req.url = baseUrl + url;
     req.method = method;
-    if (data) {
-      req.data = data;
-    }
+    if (data) { req.data = data; }
     return $http(req);
   };
 
@@ -22,14 +21,14 @@ app.controller('taskController', function(requestProcessor, $scope, $http) {
   var httpServer = requestProcessor.processor;
 
   // grab tasks
-  httpServer("http://interview.lenderprice.com:7070/api/jobs", "GET").then(function(response) {
+  httpServer("jobs", "GET").then(function(response) {
     $scope.tasks = response.data;
   });
 
   // handler for submit task modal
   $scope.submitTask = function() {
     console.log("submitTask triggered");
-    httpServer("http://interview.lenderprice.com:7070/api/jobs", "POST", {summary: $scope.formSummary, status: $scope.formStatus}).then(function(response) {
+    httpServer("jobs", "POST", {summary: $scope.formSummary, status: $scope.formStatus}).then(function(response) {
       console.log("Task Submitted: ");
       console.log(response);
       $scope.formSummary = "";
@@ -39,7 +38,7 @@ app.controller('taskController', function(requestProcessor, $scope, $http) {
 
   // handler for update task modal
   $scope.updateTask = function() {
-    var updateUrl = 'http://interview.lenderprice.com:7070/api/jobs/' + $scope.formTaskId;
+    var updateUrl = 'jobs/' + $scope.formTaskId;
     var data = {
       summary: $scope.formSummary,
       description: $scope.formDescription,
@@ -65,7 +64,7 @@ app.controller('assigneeController', function(requestProcessor, $scope, $http) {
   var httpServer = requestProcessor.processor;
 
   // grab assignees
-  httpServer("http://interview.lenderprice.com:7070/api/assignee", "GET").then(function(response) {
+  httpServer("assignee", "GET").then(function(response) {
     $scope.assignees = response.data;
   });
 
@@ -75,7 +74,7 @@ app.controller('assigneeController', function(requestProcessor, $scope, $http) {
   });
 
   $scope.submitAssignee = function() {
-    httpServer("http://interview.lenderprice.com:7070/api/assignee", "POST", {name: $scope.formAssigneeName}).then(function(response) {
+    httpServer("assignee", "POST", {name: $scope.formAssigneeName}).then(function(response) {
       console.log("Assignee Submitted");
       console.log(response);
     });
@@ -83,7 +82,7 @@ app.controller('assigneeController', function(requestProcessor, $scope, $http) {
   };
 
   $scope.assignTasks = function() {
-    var assignUrl = "http://interview.lenderprice.com:7070/api/assignjob?" + "assignee_id=" + $scope.formAssignee._id + "&" + "job_id=" + $scope.formTaskId;
+    var assignUrl = "assignjob?" + "assignee_id=" + $scope.formAssignee._id + "&" + "job_id=" + $scope.formTaskId;
     httpServer(assignUrl, "POST").then(function(response) {
       console.log("Task Assigned");
       console.log(response);
