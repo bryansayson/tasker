@@ -69,7 +69,7 @@ app.controller('assigneeController', function(requestProcessor, $scope, $http) {
   });
 
   // grab tasks
-  httpServer("http://interview.lenderprice.com:7070/api/jobs", "GET").then(function(response) {
+  httpServer("jobs", "GET").then(function(response) {
     $scope.tasks = response.data;
   });
 
