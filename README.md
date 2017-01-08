@@ -9,4 +9,5 @@ How to use:
 5. visit the website at http://localhost:3000/
 
 Feeling lazy guide:
+
 1. go to http://lenderprice-tasker.herokuapp.com/
