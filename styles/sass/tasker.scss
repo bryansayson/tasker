@@ -3,113 +3,117 @@ $thisred: #ee5f5b;
 $thisgrey: #272b30;
 
 body {
-  .header {
-     margin-bottom: 40px;
-      .could-do-it {
-        font-size: 6rem;
-      }
-    .tasker {
-      background: slateblue;
-      .wont-do-it {
-        display: block;
-        font-size: 4rem;
-        .tasker-name-container {
-          color: $thisred;
+    .header {
+        margin-bottom: 40px;
+        .could-do-it {
+            font-size: 6rem;
         }
-      }
-    }
-    div {
-      text-align: center;
-      font-size: 12rem;
-    }
-    .counter-container {
-      margin: 0 auto;
-      .counter {
-        .description {
-          font-size: 6rem;
-          .task-word {
-            color: $thisblue;
-          }
-          .assignees-word {
-            color: $thisred;
-          }
+        .tasker {
+            background: slateblue;
+            .wont-do-it {
+                display: block;
+                font-size: 4rem;
+                .tasker-name-container {
+                    color: $thisred;
+                }
+            }
         }
-      }
-    }
-  }
-  .container {
-      .menu-button:first-child {
-        margin-right: 25px;
-      }
-    .menu-button {
-      font-size: 3rem;
-      padding: 20px;
-    }
-    table {
-      thead {
-        tr {
-          th {
+        div {
             text-align: center;
-            font-size: 4rem;
-          }
+            font-size: 12rem;
         }
-      }
-      tbody {
-        tr {
-          td {
-            text-align: center;
-          }
+        .counter-container {
+            margin: 0 auto;
+            .counter {
+                .description {
+                    font-size: 6rem;
+                    .task-word {
+                        color: $thisblue;
+                    }
+                    .assignees-word {
+                        color: $thisred;
+                    }
+                }
+            }
         }
-      }
     }
-    .tasks-table {
-      margin-top: 20px;
-    }
-    .assignees-table {
-      margin-top: 20px;
-      tbody {
-        td {
-          span {
+    .container {
+        .menu-button:first-child {
+            margin-right: 25px;
+        }
+        .menu-button {
+            font-size: 3rem;
+            padding: 20px;
+        }
+        table {
+            thead {
+                tr {
+                    th {
+                        text-align: center;
+                        font-size: 4rem;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .tasks-table {
+            margin-top: 20px;
+        }
+        .assignees-table {
+            margin-top: 20px;
+            tbody {
+                td {
+                    span {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .search-container {
             display: block;
-          }
+            float: right;
+            margin-top: 15px;
+            input,
+            input:focus {
+                border: none;
+                background: $thisgrey
+            }
+            input {
+                animation: blink-empty .75s infinite;
+                border-left: transparent solid 3px;
+                margin: 3px;
+                height: 84px;
+                color: white;
+                font-size: 4rem;
+            }
+            .input-group-addon {
+                background: $thisgrey;
+                border: none;
+                i {
+                    font-size: 4rem;
+                }
+            }
+            @keyframes blink-empty {
+                50% {
+                    border-left: 1px solid white;
+                }
+            }
         }
-      }
     }
-    .search-container {
-      display: block;
-      float: right;
-      margin-top: 15px;
-      input, input:focus {
-        border:none;
-        background: $thisgrey
-      }
-      input {
-        animation: blink-empty .75s infinite;
-        border-left: transparent solid 3px;
-        margin:3px;
-        height: 84px;
-        color: white;
-        font-size: 4rem;
-      }
-      .input-group-addon {
-        background: $thisgrey;
-        border: none;
-        i {
-          font-size: 4rem;
-        }
-      }
-      @keyframes blink-empty {
-        50% {border-left: 1px solid white;}
-      }
+    #datepicker,
+    #datepicker2 {
+        display: block;
     }
-  }
-  #datepicker, #datepicker2 {
-    display: block;
-  }
 }
 
-@media only screen and (max-width : 768px) {
-  .search-container {
-    width: 100%;
-  }
+@media only screen and (max-width: 768px) {
+    .search-container {
+        width: 100%;
+    }
 }

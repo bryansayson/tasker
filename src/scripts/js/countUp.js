@@ -19,17 +19,19 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
     // by Opera engineer Erik Möller
     var lastTime = 0;
     var vendors = ['webkit', 'moz', 'ms', 'o'];
-    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+    for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
         window.cancelAnimationFrame =
-          window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+            window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
     }
     if (!window.requestAnimationFrame) {
         window.requestAnimationFrame = function(callback, element) {
             var currTime = new Date().getTime();
             var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
-              timeToCall);
+            var id = window.setTimeout(function() {
+                    callback(currTime + timeToCall);
+                },
+                timeToCall);
             lastTime = currTime + timeToCall;
             return id;
         };
@@ -42,12 +44,12 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 
     var self = this;
 
-     // default options
+    // default options
     self.options = {
-        useEasing : true, // toggle easing
-        useGrouping : true, // 1,000,000 vs 1000000
-        separator : ',', // character to use as a separator
-        decimal : '.', // character to use as a decimal
+        useEasing: true, // toggle easing
+        useGrouping: true, // 1,000,000 vs 1000000
+        separator: ',', // character to use as a separator
+        decimal: '.', // character to use as a decimal
         easingFn: null, // optional custom easing closure function, default is Robert Penner's easeOutExpo
         formattingFn: null // optional custom formatting function, default is self.formatNumber below
     };
@@ -57,7 +59,9 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
             self.options[key] = options[key];
         }
     }
-    if (self.options.separator === '') { self.options.useGrouping = false; }
+    if (self.options.separator === '') {
+        self.options.useGrouping = false;
+    }
     if (!self.options.prefix) self.options.prefix = '';
     if (!self.options.suffix) self.options.suffix = '';
 
@@ -93,7 +97,9 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
     self.easingFn = self.options.easingFn ? self.options.easingFn : self.easeOutExpo;
     self.formattingFn = self.options.formattingFn ? self.options.formattingFn : self.formatNumber;
 
-    self.version = function () { return '1.7.1'; };
+    self.version = function() {
+        return '1.7.1';
+    };
 
     // Print value to target
     self.printValue = function(value) {
@@ -101,18 +107,18 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 
         if (self.d.tagName === 'INPUT') {
             this.d.value = result;
-        }
-        else if (self.d.tagName === 'text' || self.d.tagName === 'tspan') {
+        } else if (self.d.tagName === 'text' || self.d.tagName === 'tspan') {
             this.d.textContent = result;
-        }
-        else {
+        } else {
             this.d.innerHTML = result;
         }
     };
 
     self.count = function(timestamp) {
 
-        if (!self.startTime) { self.startTime = timestamp; }
+        if (!self.startTime) {
+            self.startTime = timestamp;
+        }
 
         self.timestamp = timestamp;
         var progress = timestamp - self.startTime;
@@ -141,7 +147,7 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
         }
 
         // decimal
-        self.frameVal = Math.round(self.frameVal*self.dec)/self.dec;
+        self.frameVal = Math.round(self.frameVal * self.dec) / self.dec;
 
         // format and print value
         self.printValue(self.frameVal);
@@ -150,7 +156,9 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
         if (progress < self.duration) {
             self.rAF = requestAnimationFrame(self.count);
         } else {
-            if (self.callback) { self.callback(); }
+            if (self.callback) {
+                self.callback();
+            }
         }
     };
     // start your animation
@@ -181,7 +189,7 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
         self.printValue(self.startVal);
     };
     // pass a new endVal and start animation
-    self.update = function (newEndVal) {
+    self.update = function(newEndVal) {
         cancelAnimationFrame(self.rAF);
         self.paused = false;
         delete self.startTime;
