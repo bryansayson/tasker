@@ -39,9 +39,7 @@
         <div class="modal-body">
             <div class="form-group">
               <label for="formAssigneeName">Assignee Name</label>
-              <select class="form-control" ng-model="formAssigneeName">
-                <option ng-repeat="assignee in assignees" data={{assignee._id}}>{{assignee.name}}</option>
-              </select>
+              <select class="form-control" ng-options="assignee as assignee.name for assignee in assignees" ng-model="formAssignee"> </select>
             </div>
             <div class="form-group">
               <label for="formTaskId">Task ID</label>
