@@ -47,7 +47,8 @@ body .container .search-container {
   display: block;
   float: right;
   margin-top: 15px; }
-  body .container .search-container input, body .container .search-container input:focus {
+  body .container .search-container input,
+  body .container .search-container input:focus {
     border: none;
     background: #272b30; }
   body .container .search-container input {
@@ -67,7 +68,8 @@ body .container .search-container {
   50% {
     border-left: 1px solid white; } }
 
-body #datepicker, body #datepicker2 {
+body #datepicker,
+body #datepicker2 {
   display: block; }
 
 @media only screen and (max-width: 768px) {
