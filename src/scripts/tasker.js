@@ -83,7 +83,11 @@ app.controller('assigneeController', function(requestProcessor, $scope, $http) {
   };
 
   $scope.assignTasks = function() {
-    console.log($scope.formAssigneeName);
+    var assignUrl = "http://interview.lenderprice.com:7070/api/assignjob?" + "assignee_id=" + $scope.formAssignee._id + "&" + "job_id=" + $scope.formTaskId;
+    httpServer(assignUrl, "POST").then(function(response) {
+      console.log("Task Assigned");
+      console.log(response);
+    });
   };
 
 });
