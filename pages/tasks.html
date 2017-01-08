@@ -80,6 +80,13 @@
   </div>
   <!-- Modal -->
 
+   <div class="form-group search-container">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+        <input type="text" class="form-control" ng-model="searchTasks">
+      </div>      
+    </div>
+
   <table class="tasks-table table table-hover">
     <thead>
       <tr class="info">
@@ -89,7 +96,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="task in tasks">
+      <tr ng-repeat="task in tasks | filter:searchTasks">
         <td>{{task._id}}</td>
         <td>{{task.summary}}</td>
         <td>{{task.status}}</td>

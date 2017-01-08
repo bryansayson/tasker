@@ -1,5 +1,6 @@
 $thisblue: #5bc0de;
 $thisred: #ee5f5b;
+$thisgrey: #272b30;
 
 body {
   .header {
@@ -59,6 +60,33 @@ body {
             display: block;
           }
         }
+      }
+    }
+    .search-container {
+      width: 400px;
+      display: inline-block;
+      float: right;
+      input, input:focus {
+        border:none;
+        background: $thisgrey
+      }
+      input {
+        animation: blink-empty .75s infinite;
+        border-left: transparent solid 3px;
+        margin:3px;
+        height: 84px;
+        color: white;
+        font-size: 2rem;
+      }
+      .input-group-addon {
+        background: $thisgrey;
+        border: none;
+        i {
+          font-size: 4rem;
+        }
+      }
+      @keyframes blink-empty {
+        50% {border-left: 1px solid white;}
       }
     }
   }

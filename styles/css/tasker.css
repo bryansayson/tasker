@@ -33,5 +33,29 @@ body .container .assignees-table {
   body .container .assignees-table tbody td span {
     display: block; }
 
+body .container .search-container {
+  width: 400px;
+  display: inline-block;
+  float: right; }
+  body .container .search-container input, body .container .search-container input:focus {
+    border: none;
+    background: #272b30; }
+  body .container .search-container input {
+    animation: blink-empty .75s infinite;
+    border-left: transparent solid 3px;
+    margin: 3px;
+    height: 84px;
+    color: white;
+    font-size: 2rem; }
+  body .container .search-container .input-group-addon {
+    background: #272b30;
+    border: none; }
+    body .container .search-container .input-group-addon i {
+      font-size: 4rem; }
+
+@keyframes blink-empty {
+  50% {
+    border-left: 1px solid white; } }
+
 body #datepicker, body #datepicker2 {
   display: block; }
