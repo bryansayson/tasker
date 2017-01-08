@@ -14,7 +14,12 @@
     "jshint": "^2.9.4",
     "node": "^0.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-concat": "^2.6.1",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"

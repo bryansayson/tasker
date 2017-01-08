@@ -25,6 +25,8 @@ $.get("http://interview.lenderprice.com:7070/api/assignee")
     $.each(data, function(index, assigneeObj) {
       words.push(assigneeObj.name);
     });
+    $('.tasker-name-container').fadeIn(1000);
+    $('.tasker-name-container').fadeOut(2000);
     setInterval(function () {
       current = (current==words.length) ? 0 : current;
       tar.html(words[current]);
