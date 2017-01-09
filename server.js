@@ -2,7 +2,11 @@ var express = require('express');
 var app = express();
 var path = require('path');
 
-app.use('/', express.static(__dirname + '/public'));
+process.env.PWD = process.cwd();
+
+app.set('views', path.join(process.env.PWD, 'public'));
+
+app.use(express.static(path.join(process.env.PWD, 'public')));
 
 app.get('/', function(req, res) {
   res.sendfile('index.html');
