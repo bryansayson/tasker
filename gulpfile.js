@@ -9,7 +9,7 @@ var ngAnnotate = require('gulp-ng-annotate');
 var jsFiles = 'src/scripts/**/*.js';
 var angularFiles = 'src/scripts/angular/**/*.js';
 var angularDest = 'src/scripts/js';
-var jsDest = 'public/dist/scripts';
+var jsDest = 'public/minified/scripts';
 
 gulp.task('jshint', function() {
     gulp.src('./src/scripts/*.js')
