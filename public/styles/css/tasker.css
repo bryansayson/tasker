@@ -1,8 +1,9 @@
 body .header {
   margin-bottom: 40px; }
   body .header .could-do-it {
-    font-size: 6rem; }
+    font-size: 4rem; }
   body .header .tasker {
+    font-size: 12rem;
     background: slateblue; }
     body .header .tasker .wont-do-it {
       display: block;
@@ -10,16 +11,20 @@ body .header {
       body .header .tasker .wont-do-it .tasker-name-container {
         color: #ee5f5b; }
   body .header div {
-    text-align: center;
-    font-size: 12rem; }
+    text-align: center; }
   body .header .counter-container {
     margin: 0 auto; }
-    body .header .counter-container .counter .description {
-      font-size: 6rem; }
-      body .header .counter-container .counter .description .task-word {
-        color: #5bc0de; }
-      body .header .counter-container .counter .description .assignees-word {
-        color: #ee5f5b; }
+    body .header .counter-container .counter {
+      padding: 25px; }
+      body .header .counter-container .counter #taskCounter, body .header .counter-container .counter #assigneeCounter {
+        display: block !important;
+        font-size: 10rem; }
+      body .header .counter-container .counter .description {
+        font-size: 4rem; }
+        body .header .counter-container .counter .description .task-word {
+          color: #5bc0de; }
+        body .header .counter-container .counter .description .assignees-word {
+          color: #ee5f5b; }
 
 body .container .menu-button:first-child {
   margin-right: 25px; }

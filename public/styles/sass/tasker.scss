@@ -6,9 +6,10 @@ body {
     .header {
         margin-bottom: 40px;
         .could-do-it {
-            font-size: 6rem;
+            font-size: 4rem;
         }
         .tasker {
+            font-size: 12rem;
             background: slateblue;
             .wont-do-it {
                 display: block;
@@ -20,13 +21,17 @@ body {
         }
         div {
             text-align: center;
-            font-size: 12rem;
         }
         .counter-container {
             margin: 0 auto;
             .counter {
+                padding: 25px;
+                #taskCounter, #assigneeCounter {
+                  display: block !important;
+                  font-size: 10rem;
+                }
                 .description {
-                    font-size: 6rem;
+                    font-size: 4rem;
                     .task-word {
                         color: $thisblue;
                     }

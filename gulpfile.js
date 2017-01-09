@@ -18,9 +18,9 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('styles', function() {
-    gulp.src('./styles/sass/*.scss')
+    gulp.src('public/styles/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./styles/css'));
+        .pipe(gulp.dest('public/styles/css'));
 });
 
 gulp.task('nodemon', function() {
