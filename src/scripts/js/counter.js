@@ -10,7 +10,7 @@ var options = {
 $.get("http://interview.lenderprice.com:7070/api/jobs")
   .done(function( data ) {
     var taskCount = data.length;
-    var taskCounter = new CountUp("taskCounter", 0, taskCount, 0, 10, options);
+    var taskCounter = new CountUp("taskCounter", 0, taskCount, 0, 15, options);
     taskCounter.start();
 });
 
@@ -20,7 +20,7 @@ $.get("http://interview.lenderprice.com:7070/api/assignee")
     var current = 0;
     var tar = $('.tasker-name-container');
     var assigneeCount = data.length;
-    var assigneeCounter = new CountUp("assigneeCounter", 0, assigneeCount, 0, 10, options);
+    var assigneeCounter = new CountUp("assigneeCounter", 0, assigneeCount, 0, 15, options);
     assigneeCounter.start();
     $.each(data, function(index, assigneeObj) {
       words.push(assigneeObj.name);
