@@ -7,7 +7,7 @@ body .header {
     background: slateblue; }
     body .header .tasker .wont-do-it {
       display: block;
-      font-size: 4rem; }
+      font-size: 2rem; }
       body .header .tasker .wont-do-it .tasker-name-container {
         color: #ee5f5b; }
   body .header div {
@@ -38,7 +38,8 @@ body .container table thead tr th {
   font-size: 4rem; }
 
 body .container table tbody tr td {
-  text-align: center; }
+  text-align: center;
+  font-size: 1rem; }
 
 body .container .tasks-table {
   margin-top: 20px; }

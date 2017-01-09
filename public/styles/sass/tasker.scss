@@ -13,7 +13,7 @@ body {
             background: slateblue;
             .wont-do-it {
                 display: block;
-                font-size: 4rem;
+                font-size: 2rem;
                 .tasker-name-container {
                     color: $thisred;
                 }
@@ -63,6 +63,7 @@ body {
                 tr {
                     td {
                         text-align: center;
+                        font-size: 1rem;
                     }
                 }
             }
