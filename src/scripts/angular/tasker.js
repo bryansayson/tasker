@@ -1,4 +1,4 @@
-var app = angular.module('Tasker', ['ngRoute']);
+var app = angular.module('Tasker', ['ngRoute', 'angular-growl']);
 
 app.service('requestProcessor', function($http) {
     //function that processes HTTP requests given a URL method and data
@@ -16,7 +16,7 @@ app.service('requestProcessor', function($http) {
     };
 });
 
-app.controller('taskController', function(requestProcessor, $scope, $http) {
+app.controller('taskController', function(requestProcessor, $scope, $http, growl) {
     var httpServer = requestProcessor.processor;
     // grab tasks
     httpServer("jobs", "GET").then(function(response) {
@@ -31,6 +31,9 @@ app.controller('taskController', function(requestProcessor, $scope, $http) {
         }).then(function(response) {
             console.log("Task Submitted: ");
             console.log(response);
+            if (response.status === 200) {
+              growl.success("Success! " + "Task: " + response.config.data.summary + "was created with success message " + response.data.message + ".", {ttl: 10000});
+            }
             $scope.formSummary = "";
             $scope.formStatus = "";
         });
@@ -48,6 +51,9 @@ app.controller('taskController', function(requestProcessor, $scope, $http) {
         httpServer(updateUrl, "POST", data).then(function(response) {
             console.log("Task Updated: ");
             console.log(response);
+            if (response.status === 200) {
+              growl.success("Success! " + response.data.message, {ttl: 10000});
+            }
             $scope.formSummary = "";
             $scope.formDescription = "";
             $scope.formStatus = "";
@@ -57,7 +63,7 @@ app.controller('taskController', function(requestProcessor, $scope, $http) {
     };
 });
 
-app.controller('assigneeController', function(requestProcessor, $scope, $http) {
+app.controller('assigneeController', function(requestProcessor, $scope, $http, growl) {
     var httpServer = requestProcessor.processor;
     // grab assignees
     httpServer("assignee", "GET").then(function(response) {
@@ -73,6 +79,9 @@ app.controller('assigneeController', function(requestProcessor, $scope, $http) {
         }).then(function(response) {
             console.log("Assignee Submitted");
             console.log(response);
+            if (response.status === 200) {
+              growl.success("Success! " + "Assignee " + response.config.data.name + " has been created.", {ttl: 10000});
+            }
         });
         $scope.formAssigneeName = " ";
     };
@@ -81,6 +90,9 @@ app.controller('assigneeController', function(requestProcessor, $scope, $http) {
         httpServer(assignUrl, "POST").then(function(response) {
             console.log("Task Assigned");
             console.log(response);
+            if (response.status === 200) {
+              growl.success("Success! " +  $scope.formTaskId + " was successfully assigned to " + $scope.formAssignee.name +".", {ttl: 10000});
+            }
         });
     };
 });
